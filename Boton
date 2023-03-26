@@ -1,0 +1,15 @@
+function doGet() {
+  var template = HtmlService.createTemplateFromFile('Page');
+  return template.evaluate();
+}
+
+function sendWebhook() {
+  var webhookUrl = "https://hook.us1.make.com/skx1m717upt2xdf5tfayfmtj9t2qlj62";
+  var options = {
+    'method': 'POST',
+    'payload': '',
+    'muteHttpExceptions': true
+  };
+  var response = UrlFetchApp.fetch(webhookUrl, options);
+  Logger.log(response.getContentText());
+}
